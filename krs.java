@@ -13,8 +13,18 @@ class krs {
 
     public void tambahMatkul(mataKuliah mk) {
         if (jumlahMatkul < 5) {
-            daftarMatkul[jumlahMatkul] = mk;
-            jumlahMatkul++;
+            boolean alreadyExists = false;
+            for (int i = 0; i < jumlahMatkul; i++) {
+                if (daftarMatkul[i] != null && daftarMatkul[i].getNamaMatkul().equals(mk.getNamaMatkul())) {
+                    alreadyExists = true;
+                    break;
+                }
+            }
+
+            if (!alreadyExists) {
+                daftarMatkul[jumlahMatkul] = mk;
+                jumlahMatkul++;
+            }
         } else {
             System.out.println("Status: Jumlah maksimal mengambil mata kuliah tercapai");
         }
