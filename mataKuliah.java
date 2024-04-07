@@ -1,4 +1,4 @@
-package uni.praktikum.asprak;
+package uni.praktikum.utpasprakpemlan;
 
 class mataKuliah {
     static String[] daftarMatkul =  {
@@ -23,6 +23,7 @@ class mataKuliah {
         for (int i = 0; i < daftarMatkul.length; i++) {
             System.out.println((i + 1) + ". " + daftarMatkul[i]);
         }
+        System.out.println();
     }
 
     public String getNamaMatkul() {

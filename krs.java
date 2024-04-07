@@ -1,4 +1,4 @@
-package uni.praktikum.asprak;
+package uni.praktikum.utpasprakpemlan;
 
 class krs {
     private mahasiswa maha;
@@ -22,9 +22,14 @@ class krs {
 
     public void displayChosenCourses() {
         System.out.println("\nMata Kuliah yang telah dipilih:");
+        int count = 0;
         for (mataKuliah chosenMk : daftarMatkul) {
             if (chosenMk != null) {
-                System.out.println("- " + chosenMk.getNamaMatkul());
+                System.out.print(chosenMk.getNamaMatkul());
+                if (count < jumlahMatkul - 1) {
+                    System.out.print(", ");
+                }
+                count++;
             }
         }
     }

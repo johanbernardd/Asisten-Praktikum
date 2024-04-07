@@ -1,5 +1,4 @@
-package uni.praktikum.asprak;
-
+package uni.praktikum.utpasprakpemlan;
 class mahasiswa {
     String nama;
     int nim;
@@ -24,11 +23,19 @@ class mahasiswa {
         for (String each : eachPart) {
             emailName += each.toLowerCase();
         }
-        return emailName + "@" + prodi.toLowerCase() + "." + fakultas.toLowerCase().replace(" ", "") + ".ac.id";
+
+        String[] prodiParts = prodi.split("_");
+        String prodiInitials = "";
+        for (String part : prodiParts) {
+            if (!part.isEmpty()) {
+                prodiInitials += part.charAt(0);
+            }
+        }
+        return emailName + "@" + fakultas.toLowerCase().replace(" ", "") + "." + prodiInitials.toLowerCase() + ".ac.id";
     }
 
     public String print() {
-        return "Nama: " + nama + "\nNIM: " + nim + "\nJenis Kelamin: " + gender + "\nFakultas: " + 
-        fakultas + "\nProgram Studi: " + prodi + "\nSemester: " + semester; 
+        return "Nama: " + nama + " | NIM: " + nim + " | Jenis Kelamin: " + gender + " | Fakultas: " + 
+        fakultas + " | Program Studi: " + prodi + " | Semester: " + semester; 
     }
 }
